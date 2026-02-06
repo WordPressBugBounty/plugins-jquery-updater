@@ -3,7 +3,7 @@
 * Plugin Name: jQuery Updater
 * Plugin URI: http://www.ramoonus.nl/wordpress/jquery-updater/
 * Description: This plugin updates jQuery to the latest  stable version.
-* Version: 3.7.1.3
+* Version: 4.0.0
 * Author: Ramoonus
 * Author URI: http://www.ramoonus.nl/
 * License: GPL3
@@ -14,15 +14,15 @@
 /**
 * Replace jQuery with a newer version, load jQuery Migrate
 *
-* @version 3.7.1
+* @version 4.0.0
 * @since 1.0.0
 * @return void
 */
 function rw_jquery_updater()
  {
-    $ver = '3.7.1';
+    $ver = '4.0.0';
     $ver_core = $ver;
-    $ver_migrate = '3.5.2';
+    $ver_migrate = '3.6.0';
     $slim = false;
     $min = true;
     $cdn = false; // google, microsoft, cdnjs, jsdelivr
@@ -34,13 +34,13 @@ function rw_jquery_updater()
     wp_deregister_script( 'jquery-core' );
     // Re-register jQuery core
     // @todo make dynamic
-    wp_register_script( 'jquery-core', plugins_url( '/js/jquery-3.7.1.min.js', __FILE__ ), [], $ver_core );
+    wp_register_script( 'jquery-core', plugins_url( '/js/jquery-4.0.0.min.js', __FILE__ ), [], $ver_core );
 
     // jQuery Migrate
     // Deregister jQuery Migrate
     wp_deregister_script( 'jquery-migrate' );
     // Re-register jQuery Migrate
-    wp_register_script( 'jquery-migrate', plugins_url( '/js/jquery-migrate-3.5.2.min.js', __FILE__ ), ['jquery-core'], $ver_migrate );
+    wp_register_script( 'jquery-migrate', plugins_url( '/js/jquery-migrate-3.6.0.min.js', __FILE__ ), ['jquery-core'], $ver_migrate );
 
     // jQuery
     // Deregister jQuery ( Meta )
@@ -116,7 +116,7 @@ function jqu_render_plugin_settings_page() {
         do_settings_sections( 'dbi_example_plugin' ); ?>
 
         <p>jQuery Updated is successfully installed and activated.
-        <br>Now running jQuery 3.6.1</p>
+        <br>Now running jQuery 4.0.0</p>
     
         <hr> 
 
